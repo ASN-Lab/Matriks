@@ -10,8 +10,8 @@ const Input = () => {
                       key={i}
                       type="number"
                       step="1"
-                      pattern="[0-9]*"
-                      inputMode="numeric"
+                      pattern="-?[0-9]*"
+                      inputMode="decimal"
                       className="border border-gray-400 rounded p-2 text-center"
                       placeholder={`Input ${i + 1}`}
                     />
@@ -26,8 +26,8 @@ const Input = () => {
                       key={i}
                       type="number"
                       step="1"
-                      pattern="[0-9]*"
-                      inputMode="numeric"
+                      pattern="-?[0-9]*"
+                      inputMode="decimal"
                       className="border border-gray-400 rounded p-2 text-center"
                       placeholder={`Input ${i + 1}`}
                     />
