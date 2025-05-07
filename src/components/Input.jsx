@@ -27,7 +27,7 @@ const Input = () => {
                       type="number"
                       step="1"
                       pattern="-?[0-9]*"
-                      inputMode="tel"
+                      inputMode="decimal"
                       className="border border-gray-400 rounded p-2 text-center"
                       placeholder={`Input ${i + 1}`}
                     />
