@@ -10,6 +10,24 @@ const Matrix = () => {
   const [result, setResult] = useState(null);
   const [error, setError] = useState('');
 
+  // Convert decimal number to fraction string
+  const decimalToFraction = (decimal) => {
+    if (Number.isInteger(decimal)) return decimal.toString();
+
+    const tolerance = 1.0E-6;
+    let h1 = 1, h2 = 0;
+    let k1 = 0, k2 = 1;
+    let b = decimal;
+    do {
+      const a = Math.floor(b);
+      let aux = h1; h1 = a * h1 + h2; h2 = aux;
+      aux = k1; k1 = a * k1 + k2; k2 = aux;
+      b = 1 / (b - a);
+    } while (Math.abs(decimal - h1 / k1) > decimal * tolerance);
+
+    return h1 + "/" + k1;
+  };
+
   // Helper to parse matrix inputs to numbers, returns null if invalid
   const parseMatrix = (matrix) => {
     const parsed = matrix.map((val) => {
@@ -21,6 +39,7 @@ const Matrix = () => {
     if (parsed.includes(null)) return null;
     return parsed;
   };
+
 
   // Matrix operations
   const addMatrices = () => {
@@ -156,7 +175,7 @@ const Matrix = () => {
                 key={i}
                 className="border border-gray-400 rounded p-2 text-center bg-white"
               >
-                {val}
+                {decimalToFraction(val)}
               </div>
             ))}
           </div>
