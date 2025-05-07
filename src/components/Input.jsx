@@ -8,10 +8,9 @@ const Input = () => {
                 {[...Array(9)].map((_, i) => (
                     <input
                       key={i}
-                      type="number"
-                      step="1"
+                      type="text"
                       pattern="-?[0-9]*"
-                      inputMode="decimal"
+                      inputMode="tel"
                       className="border border-gray-400 rounded p-2 text-center"
                       placeholder={`Input ${i + 1}`}
                     />
@@ -24,10 +23,9 @@ const Input = () => {
                 {[...Array(9)].map((_, i) => (
                     <input
                       key={i}
-                      type="number"
-                      step="1"
+                      type="text"
                       pattern="-?[0-9]*"
-                      inputMode="decimal"
+                      inputMode="tel"
                       className="border border-gray-400 rounded p-2 text-center"
                       placeholder={`Input ${i + 1}`}
                     />
